@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliveryFood</title>
+    <link rel="stylesheet" href="css/norm.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="images/logo.svg" alt="logo" class="logo header-logo animated fadeInRight">
+            <input type="text" class="input
+        search-input" placeholder="Адреса доставки">
+            <div class="buttons">
+                <button class="button button-primary">
+                    <img src="images/input-button.svg" class="button-icon" alt="input-button">
+                    <span class="button-text">Увійти</span>
+                </button>
+                <button class="button" id="cart-button">
+                    <img src=" images/basket-button.svg" class="button-icon" alt="basket-button">
+                    <span class="button-text">Кошик</span>
+                </button>
+            </div>
+        </header>
+        <section class="restaurants restaurants-menu">
+            <div class="section-head section-head-menu">
+                <h2 class="section-title section-title-menu">Tanuki</h2>
+                <div class="raiting raiting-menu">&#9733; 4.5</div>
+                <div class="price price-menu">від 125 грн</div>
+                <div class="category category-menu">Піца та суші</div>
+            </div>
+        </section>
+
+        <section class="rest-cards">
+            <div class="cards">
+
+
+                <div class="card">
+                    <img src="images/menu1.jpg" alt="" class="card-image">
+                    <div class="card-text card-text-menu">
+                        <div class=" card-head card-head-menu">
+                            <h3 class="card-title card-title-menu">Рол вугор стандарт</h3>
+                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
+                                норі.</span>
+                        </div>
+                        <div class="card-buy">
+                            <button class="button button-menu">
+                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
+                                    alt="basket-button">
+                                <span class="button-text button-text-menu">В кошик</span>
+                            </button>
+                            <div class="price price-menu">125 грн</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/menu2.jpg" alt="" class="card-image">
+                    <div class="card-text card-text-menu">
+                        <div class=" card-head card-head-menu">
+                            <h3 class="card-title card-title-menu">Каліфорнія лосось стандарт</h3>
+                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
+                                норі.</span>
+                        </div>
+                        <div class="card-buy">
+                            <button class="button button-menu">
+                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
+                                    alt="basket-button">
+                                <span class="button-text button-text-menu">В кошик</span>
+                            </button>
+                            <div class="price price-menu">100 грн</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/menu3.jpg" alt="" class="card-image">
+                    <div class="card-text card-text-menu">
+                        <div class=" card-head card-head-menu">
+                            <h3 class="card-title card-title-menu">
+                                Окінава стандарт</h3>
+                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
+                                норі.</span>
+                        </div>
+                        <div class="card-buy">
+                            <button class="button button-menu">
+                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
+                                    alt="basket-button">
+                                <span class="button-text button-text-menu">В кошик</span>
+                            </button>
+                            <div class="price price-menu">230 грн</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/menu4.jpg" alt="" class="card-image">
+                    <div class="card-text card-text-menu">
+                        <div class=" card-head card-head-menu">
+                            <h3 class="card-title card-title-menu">
+                                Цезар маки хl</h3>
+                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
+                                норі.</span>
+                        </div>
+                        <div class="card-buy">
+                            <button class="button button-menu">
+                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
+                                    alt="basket-button">
+                                <span class="button-text button-text-menu">В кошик</span>
+                            </button>
+                            <div class="price price-menu">140 грн</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/menu5.jpg" alt="" class="card-image">
+                    <div class="card-text card-text-menu">
+                        <div class=" card-head card-head-menu">
+                            <h3 class="card-title card-title-menu">Ясай макі стандарт</h3>
+                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
+                                норі.</span>
+                        </div>
+                        <div class="card-buy">
+                            <button class="button button-menu">
+                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
+                                    alt="basket-button">
+                                <span class="button-text button-text-menu">В кошик</span>
+                            </button>
+                            <div class="price price-menu">200 грн</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/menu6.jpg" alt="" class="card-image">
+                    <div class="card-text card-text-menu">
+                        <div class=" card-head card-head-menu">
+                            <h3 class="card-title card-title-menu">Рол з креветкою стандарт</h3>
+                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
+                                норі.</span>
+                        </div>
+                        <div class="card-buy">
+                            <button class="button button-menu">
+                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
+                                    alt="basket-button">
+                                <span class="button-text button-text-menu">В кошик</span>
+                            </button>
+                            <div class="price price-menu">250 грн</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-block">
+                <img src="images/logo.svg" alt="" class="logo footer-logo">
+                <nav class="footer-nav">
+                    <a href="#" class="footer-link">Ресторанам</a>
+                    <a href="#" class="footer-link">Кур'єрам</a>
+                    <a href="#" class="footer-link">Центр</a>
+                    <a href="#" class="footer-link">Контакти</a>
+                </nav>
+                <div class="social-links">
+                    <a href="#" class="social-link"><img src="images/insta.svg" alt=""></a>
+                    <a href="#" class="social-link"><img src="images/facebook.svg" alt=""></a>
+                    <a href="#" class="social-link"><img src="images/vk.svg" alt=""></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <div class="model is-open">
+        <div class="model-dialog">
+            <div class="model-header">
+                <h3 class="model-title">Кошик</h3>
+                <button class="close">&times;</button>
+            </div>
+            <div class="model-body">
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">120 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">120 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">120 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">120 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">120 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="model-footer">
+                <span class="model-pricetag">1945 грн</span>
+                <div class="footer-buttons">
+                    <button class="button button-primary">Оформити замовлення</button>
+                    <button class="button">Скасування</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
