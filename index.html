@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeliveryFood</title>
     <link rel="stylesheet" href="css/norm.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,27 +18,36 @@
 </head>
 
 <body>
+
     <div class="container">
+
         <header class="header">
-            <img src="images/logo.svg" alt="logo" class="logo header-logo">
+            <img src="images/logo.svg" alt="logo" class="logo header-logo animate__animated animate__flip">
             <input type="text" class="input
         search-input" placeholder="Адреса доставки">
             <div class="buttons">
+                <span class="username"><b></b></span>
                 <button class="button button-primary button-auth">
                     <img src="images/input-button.svg" class="button-icon" alt="input-button">
                     <span class="button-text">Увійти</span>
                 </button>
-                <button class="button">
+                <button class="button" id="cart-button">
                     <img src="images/basket-button.svg" class="button-icon" alt="basket-button">
                     <span class="button-text">Кошик</span>
                 </button>
+                <button class="button button-primary button-out">
+                    <span class="button-text">Вийти</span>
+                    <span class="button-out-svg"></span>
+                </button>
             </div>
         </header>
+
         <section class="promo">
             <h1 class="promo-title">Онлайн-сервіс <br> доставки їжі додому</h1>
             <p class="promo-text">Страви з улюбленого ресторану привезе кур'єр у рукавичках, масці та з
                 антисептиком.</p>
         </section>
+
         <section class="restaurants">
             <div class="section-head">
                 <h2 class="section-title">Ресторани</h2>
@@ -45,6 +55,7 @@
                 rest-input" placeholder="Пошук страв та ресторанів">
             </div>
         </section>
+
         <section class="rest-cards">
             <div class="cards">
                 <div class="card">
@@ -61,7 +72,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <a href="menu.html"><img src="images/card2.jpg" alt="" class="card-image"></a>
                     <div class="card-text">
@@ -76,7 +86,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <a href="menu.html"><img src="images/card3.jpg" alt="" class="card-image"></a>
                     <div class="card-text">
@@ -91,7 +100,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <a href="menu.html"><img src="images/card4.jpg" alt="" class="card-image"></a>
                     <div class="card-text">
@@ -106,7 +114,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <a href="menu.html"><img src="images/card5.jpg" alt="" class="card-image"></a>
                     <div class="card-text">
@@ -121,7 +128,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <a href="menu.html"><img src="images/card6.jpg" alt="" class="card-image"></a>
                     <div class="card-text">
@@ -156,7 +162,96 @@
             </div>
         </footer>
 
+        <div class="model is-open">
+            <div class="model-dialog">
+                <div class="model-header">
+                    <h3 class="model-title">Кошик</h3>
+                    <button class="close">&times;</button>
+                </div>
+                <div class="model-body">
+                    <div class="food-row">
+                        <span class="food-name">Рол вугор стандарт</span>
+                        <strong class="food-price">120 грн</strong>
+                        <div class="food-counter">
+                            <button class="counter-button">-</button>
+                            <span class="counter">1</span>
+                            <button class="counter-button">+</button>
+                        </div>
+                    </div>
+                    <div class="food-row">
+                        <span class="food-name">Рол вугор стандарт</span>
+                        <strong class="food-price">120 грн</strong>
+                        <div class="food-counter">
+                            <button class="counter-button">-</button>
+                            <span class="counter">1</span>
+                            <button class="counter-button">+</button>
+                        </div>
+                    </div>
+                    <div class="food-row">
+                        <span class="food-name">Рол вугор стандарт</span>
+                        <strong class="food-price">120 грн</strong>
+                        <div class="food-counter">
+                            <button class="counter-button">-</button>
+                            <span class="counter">1</span>
+                            <button class="counter-button">+</button>
+                        </div>
+                    </div>
+                    <div class="food-row">
+                        <span class="food-name">Рол вугор стандарт</span>
+                        <strong class="food-price">120 грн</strong>
+                        <div class="food-counter">
+                            <button class="counter-button">-</button>
+                            <span class="counter">1</span>
+                            <button class="counter-button">+</button>
+                        </div>
+                    </div>
+                    <div class="food-row">
+                        <span class="food-name">Рол вугор стандарт</span>
+                        <strong class="food-price">120 грн</strong>
+                        <div class="food-counter">
+                            <button class="counter-button">-</button>
+                            <span class="counter">1</span>
+                            <button class="counter-button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="model-footer">
+                    <span class="model-pricetag">1945 грн</span>
+                    <div class="footer-buttons">
+                        <button class="button button-primary">Оформити замовлення</button>
+                        <button class="button">Скасування</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-auth is-open ">
+            <div class=" model-dialog model-dialog-auth ">
+                <button class="close close-auth">&times;</button>
+                <form id="loginform">
+                    <fieldset class="model-body model-body-auth">
+                        <legend class="model-title"><b>Авторизація</b></legend>
+                        <label for="" class="label-auth">
+                            <span class="auth-text">Логін</span>
+                            <input id="login" type="text">
+                        </label>
+                        <label class="label-auth">
+                            <span class="auth-text">Пароль</span>
+                            <input id="password" type="password">
+                        </label>
+                    </fieldset>
+                    <div class="model-foooter">
+                        <div class="footer-buttons">
+                            <button class="button button-primary button-log" type="submit">Увійти</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>
