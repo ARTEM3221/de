@@ -19,7 +19,21 @@ const buttonOut = document.querySelector('.button-out');
 let login = localStorage.getItem('gloDelivery');
 function toggleModelAuth() {
     modelAuth.classList.toggle("is-open");
+    if (modelAuth.classList.contains("model-auth")) {
+        disableScroll();
+    } else {
+        enableScroll();
+    }
 }
+
+
+
+function clearForm() {
+    loginInput.style.borderColor = '';
+    logInForm.reset();
+}
+
+
 
 function authorized() {
 
@@ -50,19 +64,29 @@ function notAuthorized() {
     console.log('Не авторизований');
     function logIn(event) {
         event.preventDefault();
-        login = loginInput.value;
-        localStorage.setItem('gloDelivery', login);
-        toggleModelAuth();
-        buttonAuth.removeEventListener('click', toggleModelAuth);
-        closeAuth.removeEventListener('click', toggleModelAuth);
-        logInForm.removeEventListener('submit', logIn);
-        logInForm.reset();
-        checkAuth();
+        if (loginInput.value.trim()) {
+            login = loginInput.value;
+            localStorage.setItem('gloDelivery', login);
+            toggleModelAuth();
+            buttonAuth.removeEventListener('click', toggleModelAuth);
+            closeAuth.removeEventListener('click', toggleModelAuth);
+            logInForm.removeEventListener('submit', logIn);
+            logInForm.reset();
+            checkAuth();
+        } else {
+            loginInput.style.borderColor = '#ff0000';
+            loginInput.value = '';
+        }
     }
 
     buttonAuth.addEventListener('click', toggleModelAuth);
     closeAuth.addEventListener('click', toggleModelAuth);
     logInForm.addEventListener('submit', logIn);
+    modelAuth.addEventListener('click', function (event) {
+        if (event.target.classList.contains('model-auth')) {
+            toggleModelAuth();
+        }
+    })
 }
 
 function checkAuth() {
