@@ -8,3 +8,8 @@ close.addEventListener("click", toggleModel);
 function toggleModel() {
     model.classList.toggle("is-open");
 }
+
+
+
+const buttonAuth = document.querySelector('.button-auth');
+console.log(buttonAuth);
