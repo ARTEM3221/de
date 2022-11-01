@@ -33,11 +33,11 @@ const getData = async function (url) {
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Pomulka po adresi ${url}, 
-        statys pomulku ${response}`);
+        statys pomulku ${response.status}`);
     }
+    return await response.json();
 };
 
-getData('./db/partners.json');
 
 
 function toggleModelAuth() {
