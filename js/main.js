@@ -33,9 +33,11 @@ const getData = async function (url) {
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Pomulka po adresi ${url}, 
-        statys pomulku ${response}`)
+        statys pomulku ${response}`);
     }
 };
+
+getData('./db/partners.json');
 
 
 function toggleModelAuth() {
@@ -115,9 +117,21 @@ function checkAuth() {
 
 checkAuth();
 
-function createCardRestaurant() {
-    const card = `<div class="card">
-    <a><img src="images/card1.jpg" alt="" class="card-image"></a>
+function createCardRestaurant(restaurant) {
+
+    const {
+        image,
+        kitchen,
+        name,
+        price,
+        stars,
+        products,
+        time_of_delivery
+    } = restaurant;
+
+    const card =
+        `<div class="card">
+    <a><img src="${image}" alt="" class="card-image"></a>
     <div class="card-text">
         <div class="card-head">
             <h3 class="card-title">Піца плюс</h3>
@@ -183,7 +197,7 @@ function openGoods(event) {
 }
 
 
-getData('./db/partners.json').then(function(data){
+getData('./db/partners.json').then(function (data) {
     data.forEach(createCardRestaurant)
 });
 
