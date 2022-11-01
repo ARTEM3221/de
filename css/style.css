@@ -82,7 +82,25 @@ a {
     margin-right: 35px;
 }
 
-.promo {
+.promo-pizza {
+    background-image: url(../images/promo-background.png);
+    padding: 40px 70px;
+    height: 300px;
+}
+
+.promo-kebab {
+    background-image: url(../images/promo-background.png);
+    padding: 40px 70px;
+    height: 300px;
+}
+
+.promo-vegetables {
+    background-image: url(../images/promo-background.png);
+    padding: 40px 70px;
+    height: 300px;
+}
+
+.promo-sushi {
     background-image: url(../images/promo-background.png);
     padding: 40px 70px;
     height: 300px;
@@ -106,6 +124,8 @@ a {
     line-height: 28px;
     color: #302C34;
 }
+
+
 
 
 .menu-cards {
@@ -147,6 +167,10 @@ a {
     flex-wrap: wrap;
     margin-top: 30px;
     justify-content: space-between;
+}
+
+.hidden {
+    display: none;
 }
 
 .card {

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/norm.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,10 +43,33 @@
             </div>
         </header>
 
-        <section class="promo">
-            <h1 class="promo-title">Онлайн-сервіс <br> доставки їжі додому</h1>
-            <p class="promo-text">Страви з улюбленого ресторану привезе кур'єр у рукавичках, масці та з
-                антисептиком.</p>
+        <section class="promo swiper">
+            <div class="promo-container swiper-wrapper">
+                <section class="promo-pizza swiper-slide">
+                    <h1 class="promo-title">Онлайн-сервис <br />доставки еды на дом</h1>
+                    <p class="promo-text">
+                        Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+                    </p>
+                </section>
+                <section class="promo-kebab swiper-slide">
+                    <h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
+                    <p class="promo-text">
+                        Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+                    </p>
+                </section>
+                <section class="promo-vegetables swiper-slide">
+                    <h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
+                    <p class="promo-text">
+                        Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+                    </p>
+                </section>
+                <section class="promo-sushi swiper-slide">
+                    <h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
+                    <p class="promo-text">
+                        Скидки на сеты до 30 мая по промокоду DADADA
+                    </p>
+                </section>
+            </div>
         </section>
 
         <section class="restaurants">
@@ -57,7 +81,7 @@
 
 
             <section class="rest-cards">
-                <div class="cards">
+                <div class="cards hidden">
                     <div class="card">
                         <a href="menu.html"><img src="images/card1.jpg" alt="" class="card-image"></a>
                         <div class="card-text">
@@ -147,7 +171,7 @@
         </section>
 
         <section class="menu-cards hide">
-            <div class="cards">
+            <div class="cards hidden">
                 <div class="card animate__animated animate__pulse">
                     <img src="images/menu1.jpg" alt="" class="card-image">
                     <div class="card-text card-text-menu">
@@ -366,7 +390,7 @@
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
     <script src="js/disable-scroll.js"></script>
 
 </body>
