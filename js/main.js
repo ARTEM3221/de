@@ -27,6 +27,7 @@ const menu = document.querySelector('.menu-cards');
 const logo = document.querySelector('.logo');
 const menuCards = document.querySelector('.menu-cards');
 
+
 let login = localStorage.getItem('gloDelivery');
 
 const getData = async function (url) {
@@ -128,24 +129,27 @@ function createCardRestaurant(restaurant) {
         time_of_delivery
     } = restaurant;
 
+
+
     const card =
-        `<div class="card">
+        `<div class="card" data-products-my-max-shop="${products}">
     <a><img src="${image}" alt="" class="card-image"></a>
     <div class="card-text">
         <div class="card-head">
-            <h3 class="card-title">Піца плюс</h3>
-            <span class="card-tag">50 хв</span>
+            <h3 class="card-title">${name}</h3>
+            <span class="card-tag">${time_of_delivery}</span>
         </div>
         <div class="card-info">
-            <div class="raiting">&#9733; 4.5</div>
-            <div class="price">від 100 грн</div>
-            <div class="category">Піца</div>
+            <div class="raiting">&#9733; ${stars}</div>
+            <div class="price">${price}</div>
+            <div class="category">${kitchen}</div>
         </div>
     </div>
 </div>
 `;
     cardsRestaurants.insertAdjacentHTML('beforeend', card);
 }
+
 
 
 
@@ -181,12 +185,11 @@ function openGoods(event) {
     if (login) {
         const restaurant = target.closest('.rest-cards');
         if (restaurant) {
+
             containerPromo.classList.add('hide');
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
-            createCardGood();
-            createCardGood();
-            createCardGood();
+
         }
     } else {
         toggleModelAuth();
