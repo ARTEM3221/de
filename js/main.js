@@ -130,7 +130,7 @@ function createCardRestaurant(restaurant) {
 
     const card =
         `<div class="card">
-    <a><img src="images/card1.jpg" alt="" class="card-image"></a>
+    <a><img src="${image}" alt="" class="card-image"></a>
     <div class="card-text">
         <div class="card-head">
             <h3 class="card-title">Піца плюс</h3>
@@ -147,9 +147,7 @@ function createCardRestaurant(restaurant) {
     cardsRestaurants.insertAdjacentHTML('beforeend', card);
 }
 
-createCardRestaurant();
-createCardRestaurant();
-createCardRestaurant();
+
 
 function createCardGood() {
     const card = document.createElement('div');
