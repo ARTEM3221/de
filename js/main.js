@@ -118,20 +118,19 @@ function checkAuth() {
 checkAuth();
 
 function createCardRestaurant(restaurant) {
-
     const {
         image,
         kitchen,
         name,
         price,
-        stars,
         products,
+        stars,
         time_of_delivery
     } = restaurant;
 
     const card =
         `<div class="card">
-    <a><img src="${image}" alt="" class="card-image"></a>
+    <a><img src="images/card1.jpg" alt="" class="card-image"></a>
     <div class="card-text">
         <div class="card-head">
             <h3 class="card-title">Піца плюс</h3>
