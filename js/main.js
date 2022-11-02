@@ -33,8 +33,8 @@ let login = localStorage.getItem('gloDelivery');
 const getData = async function (url) {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`Pomulka po adresi ${url}, 
-        statys pomulku ${response.status}`);
+        throw new Error(`Adres ${url},
+        statys ${response}`)
     }
     return await response.json();
 };
@@ -132,7 +132,7 @@ function createCardRestaurant(restaurant) {
 
 
     const card =
-        `<div class="card" data-products-my-max-shop="${products}">
+        `<div class="card" data-products="${products}">
     <a><img src="${image}" alt="" class="card-image"></a>
     <div class="card-text">
         <div class="card-head">
@@ -153,17 +153,18 @@ function createCardRestaurant(restaurant) {
 
 
 
-function createCardGood() {
+function createCardGood(goods) {
+
+    const { description, image, name, price } = goods;
     const card = document.createElement('div');
     card.className = 'card';
     card.insertAdjacentHTML('beforeend', `
     <div class="anim animate__animated animate__pulse">
-                    <img src="images/menu1.jpg" alt="" class="card-image">
+                    <img src="${image}" alt="" class="card-image">
                     <div class="card-text card-text-menu">
                         <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">Рол вугор стандарт</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
+                            <h3 class="card-title card-title-menu">${name}</h3>
+                            <span class="card-info card-info-menu">${description}</span>
                         </div>
                         <div class="card-buy">
                             <button class="button button-menu">
@@ -171,7 +172,7 @@ function createCardGood() {
                                     alt="basket-button">
                                 <span class="button-text button-text-menu">В кошик</span>
                             </button>
-                            <div class="price price-menu">125 грн</div>
+                            <div class="price price-menu">${price}</div>
                         </div>
                     </div>
                 </div>
@@ -189,7 +190,9 @@ function openGoods(event) {
             containerPromo.classList.add('hide');
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
-
+            getData(`./db/${restaurant.dataset.products}`).then(function (data) {
+                data.forEach(createCardGood);
+            });
         }
     } else {
         toggleModelAuth();
