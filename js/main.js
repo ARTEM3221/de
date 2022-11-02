@@ -2,17 +2,11 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
 
+
+
 const cartButton = document.querySelector("#cart-button");
 const model = document.querySelector(".model");
 const close = document.querySelector(".close");
-
-cartButton.addEventListener("click", toggleModel);
-close.addEventListener("click", toggleModel);
-
-function toggleModel() {
-    model.classList.toggle("is-open");
-}
-
 const buttonAuth = document.querySelector('.button-auth');
 const modelAuth = document.querySelector('.model-auth');
 const closeAuth = document.querySelector('.close-auth');
@@ -39,7 +33,9 @@ const getData = async function (url) {
     return await response.json();
 };
 
-
+function toggleModel() {
+    model.classList.toggle("is-open");
+}
 
 function toggleModelAuth() {
     modelAuth.classList.toggle("is-open-auth");
@@ -116,8 +112,6 @@ function checkAuth() {
     }
 }
 
-checkAuth();
-
 function createCardRestaurant(restaurant) {
     const {
         image,
@@ -149,9 +143,6 @@ function createCardRestaurant(restaurant) {
 `;
     cardsRestaurants.insertAdjacentHTML('beforeend', card);
 }
-
-
-
 
 function createCardGood(goods) {
 
@@ -204,6 +195,9 @@ getData('./db/partners.json').then(function (data) {
     data.forEach(createCardRestaurant)
 });
 
+cartButton.addEventListener("click", toggleModel);
+close.addEventListener("click", toggleModel);
+
 cardsRestaurants.addEventListener('click', openGoods);
 
 logo.addEventListener('click', function () {
@@ -211,6 +205,8 @@ logo.addEventListener('click', function () {
     restaurants.classList.remove('hide')
     menu.classList.add('hide')
 });
+
+checkAuth();
 
 new Swiper('.swiper', {
     sliderPreView: 1,
