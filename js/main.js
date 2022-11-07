@@ -20,6 +20,7 @@ const restaurants = document.querySelector('.restaurants');
 const menu = document.querySelector('.menu-cards');
 const logo = document.querySelector('.logo');
 const menuCards = document.querySelector('.menu-cards');
+const inputSearch = document.querySelector('.rest-input');
 
 
 let login = localStorage.getItem('gloDelivery');
@@ -28,7 +29,7 @@ const getData = async function (url) {
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Adres ${url},
-        statys ${response}`)
+        statys ${response}`);
     }
     return await response.json();
 };
@@ -123,6 +124,10 @@ function createCardRestaurant(restaurant) {
         time_of_delivery
     } = restaurant;
 
+    const cardRestaurant = document.createElement('a');
+    cardRestaurant.classList.add('card', 'card-restaurant');
+    cardRestaurant.products = products;
+    cardRestaurant.info = { kitchen, name, price, stars };
 
 
     const card =
@@ -181,32 +186,58 @@ function openGoods(event) {
             containerPromo.classList.add('hide');
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
-            getData(`./db/${restaurant.dataset.products}`).then(function (data) {
+            
+            getData(`./db/${restaurant.products}`).then(function (data) {
                 data.forEach(createCardGood);
             });
+
+
         }
     } else {
         toggleModelAuth();
     }
 }
 
+function returnMain() {
+    containerPromo.classList.remove('hide');
+    restaurants.classList.remove('hide');
+    menu.classList.add('hide');
+}
 
-getData('./db/partners.json').then(function (data) {
-    data.forEach(createCardRestaurant)
-});
 
-cartButton.addEventListener("click", toggleModel);
-close.addEventListener("click", toggleModel);
+function init() {
+    getData('./db/partners.json').then(function (data) {
+        data.forEach(createCardRestaurant)
+    });
 
-cardsRestaurants.addEventListener('click', openGoods);
+    cartButton.addEventListener("click", toggleModel);
 
-logo.addEventListener('click', function () {
-    containerPromo.classList.remove('hide')
-    restaurants.classList.remove('hide')
-    menu.classList.add('hide')
-});
+    close.addEventListener("click", toggleModel);
 
-checkAuth();
+    cardsRestaurants.addEventListener('click', openGoods);
+
+    logo.addEventListener('click', returnMain);
+
+    checkAuth();
+
+    inputSearch.addEventListener('keypress', function (event) {
+        if (event.charCode === 13) {
+            getData('./db/partners.json')
+                .then(function (data) {
+                    return data.map(function (partner) {
+                        return partner.products;
+                    });
+                })
+                .then(function (linksProduct) {
+                    linksProduct.forEach(function (link) {
+                        getData(`./db/${link}`)
+                            .then(function (param) { })
+                    })
+                })
+        }
+    })
+}
+init();
 
 new Swiper('.swiper', {
     sliderPreView: 1,

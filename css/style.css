@@ -131,6 +131,7 @@ a {
 
 .menu-cards {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .rest-cards {
