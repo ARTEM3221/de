@@ -19,21 +19,22 @@
 </head>
 
 <body>
-
     <div class="container">
-
         <header class="header">
-            <img src="images/logo.svg" alt="logo" class="logo header-logo animate__animated animate__flip">
-            <input type="text" class="input
-        search-input" placeholder="Адреса доставки">
+            <a class="logo animate__animated animate__flip">
+                <img src="img/icon/logo.svg" alt="Logo" />
+            </a>
+            <label class="address">
+                <input type="text" class="input input-address" placeholder="Адреса доставки" />
+            </label>
             <div class="buttons">
-                <span class="username"><b></b></span>
+                <span class="user-name"></span>
                 <button class="button button-primary button-auth">
-                    <img src="images/input-button.svg" class="button-icon" alt="input-button">
+                    <span class="button-auth-svg button-icon"><img src="img/icon/user.svg" alt=""></span>
                     <span class="button-text">Увійти</span>
                 </button>
-                <button class="button" id="cart-button">
-                    <img src="images/basket-button.svg" class="button-icon" alt="basket-button">
+                <button class="button button-cart" id="cart-button">
+                    <span class="button-cart-svg button-icon"><img src="img/icon/shopping-cart.svg" alt=""></span>
                     <span class="button-text">Кошик</span>
                 </button>
                 <button class="button button-primary button-out">
@@ -42,357 +43,455 @@
                 </button>
             </div>
         </header>
+    </div>
 
-        <section class="promo swiper">
-            <div class="promo-container swiper-wrapper">
-                <section class="promo-pizza swiper-slide">
-                    <h1 class="promo-title">Онлайн-сервис <br />доставки еды на дом</h1>
-                    <p class="promo-text">
-                        Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
-                    </p>
-                </section>
-                <section class="promo-kebab swiper-slide">
-                    <h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
-                    <p class="promo-text">
-                        Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
-                    </p>
-                </section>
-                <section class="promo-vegetables swiper-slide">
-                    <h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
-                    <p class="promo-text">
-                        Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
-                    </p>
-                </section>
-                <section class="promo-sushi swiper-slide">
-                    <h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
-                    <p class="promo-text">
-                        Скидки на сеты до 30 мая по промокоду DADADA
-                    </p>
+    <main class="main">
+        <div class="container ">
+            <div class="container-promo swiper">
+                <section class=" swiper-wrapper">
+                    <section class="promo pizza swiper-slide">
+                        <h1 class="promo-title">Онлайн-сервіс <br />доставки їжі додому</h1>
+                        <p class="promo-text">
+                            Страви з улюбленого ресторану привезе кур'єр у рукавичках, масці та з антисептиком.
+                        </p>
+                    </section>
+                    <section class="promo kebab">
+                        <h1 class="promo-title">Шашлики на травневі<br> зі знижкою 35%</h1>
+                        <p class="promo-text">
+                            Замовте шашлики в будь-якому ресторані до 10 травня та отримайте знижку за промокодом OMAGAD
+                        </p>
+                    </section>
+                    <section class="promo vegetables">
+                        <h1 class="promo-title">знижка 20% на всю їжу <br> за промокодом LOVE.JS</h1>
+                        <p class="promo-text">
+                            Страву з ресторану привезуть разом із двома подарунковими книгами по фронтенду
+                        </p>
+                    </section>
+                    <section class="promo sushi">
+                        h1 class="promo-title">Сети зі знижкою до 30% <br> у ресторанах</h1>
+                        <p class="promo-text">
+                            Знижки на мережі до 30 травня за промокодом DADADA
+                        </p>
+                    </section>
                 </section>
             </div>
-        </section>
 
-        <section class="restaurants">
-            <div class="section-head">
-                <h2 class="section-title">Ресторани</h2>
-                <input type="text" class="input
-                rest-input" placeholder="Пошук страв та ресторанів">
-            </div>
-
-
-            <section class="rest-cards">
-                <div class="cards hidden">
-                    <div class="card">
-                        <a><img src="images/card1.jpg" alt="" class="card-image"></a>
+            <section class="restaurants">
+                <div class="section-heading">
+                    <h2 class="section-title">Ресторани</h2>
+                    <label class="search">
+                        <input type="text" class="input input-search" placeholder="Пошук страв та ресторанів" />
+                    </label>
+                </div>
+                <div class="cards cards-restaurants">
+                    <a class="card card-restaurant">
+                        <img src="img/gusi-lebedi/preview.jpg" alt="image" class="card-image" />
                         <div class="card-text">
-                            <div class="card-head">
+                            <div class="card-heading">
                                 <h3 class="card-title">Піца плюс</h3>
-                                <span class="card-tag">50 хв</span>
+                                <span class="card-tag tag">50 хв</span>
                             </div>
+
                             <div class="card-info">
-                                <div class="raiting">&#9733; 4.5</div>
-                                <div class="price">від 100 грн</div>
+                                <div class="rating">
+                                    4.5
+                                </div>
+                                <div class="price">Від 300 грн</div>
                                 <div class="category">Піца</div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="card">
-                        <a><img src="images/card2.jpg" alt="" class="card-image"></a>
+
+                    </a>
+
+
+                    <a class="card card-restaurant">
+                        <img src="img/tanuki/preview.jpg" alt="image" class="card-image" />
                         <div class="card-text">
-                            <div class="card-head">
-                                <h3 class="card-title">Tanuki</h3>
-                                <span class="card-tag">50 хв</span>
+                            <div class="card-heading">
+                                <h3 class="card-title">Tanuks</h3>
+                                <span class="card-tag tag">60 хв</span>
                             </div>
+
                             <div class="card-info">
-                                <div class="raiting">&#9733; 4.5</div>
-                                <div class="price">від 100 грн</div>
-                                <div class="category">Піца</div>
+                                <div class="rating">
+                                    4.5
+                                </div>
+                                <div class="price">Від 1200 грн</div>
+                                <div class="category">Суші роли</div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="card">
-                        <a><img src="images/card3.jpg" alt="" class="card-image"></a>
+
+                    </a>
+
+
+                    <a class="card card-restaurant">
+                        <img src="img/food-band/preview.jpg" alt="image" class="card-image" />
                         <div class="card-text">
-                            <div class="card-head">
+                            <div class="card-heading">
                                 <h3 class="card-title">FoodBand</h3>
-                                <span class="card-tag">50 хв</span>
+                                <span class="card-tag tag">40 хв</span>
                             </div>
+
                             <div class="card-info">
-                                <div class="raiting">&#9733; 4.5</div>
-                                <div class="price">від 100 грн</div>
+                                <div class="rating">
+                                    4.5
+                                </div>
+                                <div class="price">Від 400 грн</div>
                                 <div class="category">Піца</div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="card">
-                        <a><img src="images/card4.jpg" alt="" class="card-image"></a>
+
+                    </a>
+
+
+                    <a class="card card-restaurant">
+                        <img src="img/palki-skalki/preview.jpg" alt="image" class="card-image" />
                         <div class="card-text">
-                            <div class="card-head">
-                                <h3 class="card-title">Greedy pizza</h3>
-                                <span class="card-tag">50 хв</span>
+                            <div class="card-heading">
+                                <h3 class="card-title">Палиці качалки</h3>
+                                <span class="card-tag tag">55 хв</span>
                             </div>
+
                             <div class="card-info">
-                                <div class="raiting">&#9733; 4.5</div>
-                                <div class="price">від 100 грн</div>
+                                <div class="rating">
+                                    4.5
+                                </div>
+                                <div class="price">От 500 грн</div>
                                 <div class="category">Піца</div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="card">
-                        <a><img src="images/card5.jpg" alt="" class="card-image"></a>
+
+                    </a>
+
+
+                    <a class="card card-restaurant">
+                        <img src="img/gusi-lebedi/preview.jpg" alt="image" class="card-image" />
                         <div class="card-text">
-                            <div class="card-head">
-                                <h3 class="card-title">Food point</h3>
-                                <span class="card-tag">50 хв</span>
+                            <div class="card-heading">
+                                <h3 class="card-title">Гуси Лебеді</h3>
+                                <span class="card-tag tag">75 хв</span>
                             </div>
+
                             <div class="card-info">
-                                <div class="raiting">&#9733; 4.5</div>
-                                <div class="price">від 100 грн</div>
-                                <div class="category">Піца</div>
+                                <div class="rating">
+                                    4.5
+                                </div>
+                                <div class="price">Від 1000 грн</div>
+                                <div class="category">Українська кухня</div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="card">
-                        <a><img src="images/card6.jpg" alt="" class="card-image"></a>
+
+                    </a>
+
+
+                    <a class="card card-restaurant">
+                        <img src="img/pizza-burger/preview.jpg" alt="image" class="card-image" />
                         <div class="card-text">
-                            <div class="card-head">
+                            <div class="card-heading">
                                 <h3 class="card-title">PizzaBurger</h3>
-                                <span class="card-tag">50 хв</span>
+                                <span class="card-tag tag">45 хв</span>
                             </div>
+
                             <div class="card-info">
-                                <div class="raiting">&#9733; 4.5</div>
-                                <div class="price">від 100 грн</div>
+                                <div class="rating">
+                                    4.5
+                                </div>
+                                <div class="price">Від 700 грн</div>
                                 <div class="category">Піца</div>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+            <section class="menu hide">
+                <div class="section-heading">
+                    <h2 class="section-title restaurant-title">Піца Плюс</h2>
+                    <div class="card-info">
+                        <div class="rating">
+                            4.5
+                        </div>
+                        <div class="price">Від 900 грн</div>
+                        <div class="category">Піца</div>
+                    </div>
+
+                </div>
+                <div class="cards cards-menu">
+                    <div class="card">
+                        <img src="img/pizza-plus/pizza-vesuvius.jpg" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">Піца Везувій</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">Соус томатний, сир «Моцарелла», шинка, пепероні, перець
+                                    "Халапіння", соус "Тобаско", томати.
+                                </div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">545 грн</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <img src="img/pizza-plus/pizza-girls.jpg" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">Піца Дівич-вечір</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">Соус томатний, пісне тісто, нежирний сир, кукурудза, цибуля,
+                                    маслини,
+                                    гриби, помідори, болгарський перець.
+                                </div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">450 грн</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <img src="img/pizza-plus/pizza-oleole.jpg" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">Піца Оле-Оле</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">Соус томатний, сир «Моцарелла», чері, маслини, зелень, майонез
+                                </div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">440 грн</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <img src="img/pizza-plus/pizza-plus.jpg" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">Піца Плюс</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">Соус томатний, сир «Моцарелла», сир «Чеддер», томати,
+                                    пепероні,
+                                    телятина, гриби, бекон, болгарський перець.
+                                </div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">805 грн</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <img src="img/pizza-plus/pizza-hawaiian.jpg" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">Піца Гавайська</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">Соус томатний, сир «Моцарелла», шинка, ананаси</div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">440 грн</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <img src="img/pizza-plus/pizza-classic.jpg" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">Піца Класика</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">Соус томатний, сир «Моцарелла», сир «Пармезан», шинка,
+                                    салямі,
+                                    гриби.
+                                </div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">510 грн</strong>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </section>
+        </div>
 
-        <section class="menu-cards hide">
-            <div class="cards hidden">
-                <div class="card animate__animated animate__pulse">
-                    <img src="images/menu1.jpg" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">Рол вугор стандарт</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">125 грн</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card animate__animated animate__pulse">
-                    <img src="images/menu2.jpg" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">Каліфорнія лосось стандарт</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">100 грн</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card animate__animated animate__pulse">
-                    <img src="images/menu3.jpg" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">
-                                Окінава стандарт</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">230 грн</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card animate__animated animate__pulse">
-                    <img src="images/menu4.jpg" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">
-                                Цезар маки хl</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">140 грн</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card animate__animated animate__pulse">
-                    <img src="images/menu5.jpg" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">Ясай макі стандарт</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">200 грн</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card animate__animated animate__pulse">
-                    <img src="images/menu6.jpg" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">Рол з креветкою стандарт</h3>
-                            <span class="card-info card-info-menu">Рис, вугор, соус унаги, кунжут, водорості
-                                норі.</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">250 грн</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </main>
 
-        <footer class="footer">
+    <footer class="footer">
+        <div class="container">
             <div class="footer-block">
-                <img src="images/logo.svg" alt="" class="logo footer-logo">
+                <img src="img/icon/logo.svg" alt="logo" class="logo footer-logo" />
                 <nav class="footer-nav">
-                    <a href="#" class="footer-link">Ресторанам</a>
-                    <a href="#" class="footer-link">Кур'єрам</a>
-                    <a href="#" class="footer-link">Центр</a>
+                    <a href="#" class="footer-link">Ресторанам
+                    </a>
+                    <a href="#" class="footer-link">
+                        Кур'єрам</a>
+                    <a href="#" class="footer-link">Прес-центр</a>
                     <a href="#" class="footer-link">Контакти</a>
                 </nav>
                 <div class="social-links">
-                    <a href="#" class="social-link"><img src="images/insta.svg" alt=""></a>
-                    <a href="#" class="social-link"><img src="images/facebook.svg" alt=""></a>
-                    <a href="#" class="social-link"><img src="images/vk.svg" alt=""></a>
+                    <a href="#" class="social-link"><img src="img/social/instagram.svg" alt="instagram" /></a>
+                    <a href="#" class="social-link"><img src="img/social/fb.svg" alt="facebook" /></a>
+                    <a href="#" class="social-link"><img src="img/social/vk.svg" alt="vk" /></a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="modal modal-cart">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title">Кошик</h3>
+                <button class="close">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">250 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">250 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">250 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+                <div class="food-row">
+                    <span class="food-name">Рол вугор стандарт</span>
+                    <strong class="food-price">250 грн</strong>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <span class="modal-pricetag">1250 грн</span>
+                <div class="footer-buttons">
+                    <button class="button button-primary">Оформити замовлення</button>
+                    <button class="button clear-cart">Скасування</button>
                 </div>
             </div>
-        </footer>
 
-        <div class="model is-open">
-            <div class="model-dialog">
-                <div class="model-header">
-                    <h3 class="model-title">Кошик</h3>
-                    <button class="close">&times;</button>
-                </div>
-                <div class="model-body">
-                    <div class="food-row">
-                        <span class="food-name">Рол вугор стандарт</span>
-                        <strong class="food-price">120 грн</strong>
-                        <div class="food-counter">
-                            <button class="counter-button">-</button>
-                            <span class="counter">1</span>
-                            <button class="counter-button">+</button>
-                        </div>
-                    </div>
-                    <div class="food-row">
-                        <span class="food-name">Рол вугор стандарт</span>
-                        <strong class="food-price">120 грн</strong>
-                        <div class="food-counter">
-                            <button class="counter-button">-</button>
-                            <span class="counter">1</span>
-                            <button class="counter-button">+</button>
-                        </div>
-                    </div>
-                    <div class="food-row">
-                        <span class="food-name">Рол вугор стандарт</span>
-                        <strong class="food-price">120 грн</strong>
-                        <div class="food-counter">
-                            <button class="counter-button">-</button>
-                            <span class="counter">1</span>
-                            <button class="counter-button">+</button>
-                        </div>
-                    </div>
-                    <div class="food-row">
-                        <span class="food-name">Рол вугор стандарт</span>
-                        <strong class="food-price">120 грн</strong>
-                        <div class="food-counter">
-                            <button class="counter-button">-</button>
-                            <span class="counter">1</span>
-                            <button class="counter-button">+</button>
-                        </div>
-                    </div>
-                    <div class="food-row">
-                        <span class="food-name">Рол вугор стандарт</span>
-                        <strong class="food-price">120 грн</strong>
-                        <div class="food-counter">
-                            <button class="counter-button">-</button>
-                            <span class="counter">1</span>
-                            <button class="counter-button">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="model-footer">
-                    <span class="model-pricetag">1945 грн</span>
+        </div>
+
+    </div>
+
+    <div class="modal-auth">
+        <div class="modal-dialog modal-dialog-auth">
+            <button class="close-auth">&times;</button>
+            <form id="logInForm">
+                <fieldset class="modal-body">
+                    <legend class="modal-title">Авторизація</legend>
+                    <label class="label-auth">
+                        <span>Логін</span>
+                        <input id="login" type="text">
+                    </label>
+                    <label class="label-auth">
+                        <span>Пароль</span>
+                        <input id="password" type="password">
+                    </label>
+                </fieldset>
+
+                <div class="modal-footer">
                     <div class="footer-buttons">
-                        <button class="button button-primary">Оформити замовлення</button>
-                        <button class="button">Скасування</button>
+                        <button class="button button-primary button-login" type="submit">Увійти</button>
                     </div>
                 </div>
-            </div>
+            </form>
+
         </div>
 
-        <div class="model-auth is-open-auth ">
-            <div class=" model-dialog model-dialog-auth ">
-                <button class="close close-auth">&times;</button>
-                <form id="loginform">
-                    <fieldset class="model-body model-body-auth">
-                        <legend class="model-title"><b>Авторизація</b></legend>
-                        <label for="" class="label-auth">
-                            <span class="auth-text">Логін</span>
-                            <input id="login" type="text">
-                        </label>
-                        <label class="label-auth">
-                            <span class="auth-text">Пароль</span>
-                            <input id="password" type="password">
-                        </label>
-                    </fieldset>
-                    <div class="model-foooter">
-                        <div class="footer-buttons">
-                            <button class="button button-primary button-log" type="submit">Увійти</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 
     <script src="js/main.js" type="module"></script>
     <script src="js/disable-scroll.js"></script>
-
 </body>
 
 </html>

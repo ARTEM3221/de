@@ -5,21 +5,21 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.brow
 
 
 const cartButton = document.querySelector("#cart-button");
-const model = document.querySelector(".model");
+const model = document.querySelector(".modal");
 const close = document.querySelector(".close");
 const buttonAuth = document.querySelector('.button-auth');
-const modelAuth = document.querySelector('.model-auth');
+const modelAuth = document.querySelector('.modal-auth');
 const closeAuth = document.querySelector('.close-auth');
 const logInForm = document.querySelector('#loginform');
 const loginInput = document.querySelector('#login');
 const userName = document.querySelector('.username');
 const buttonOut = document.querySelector('.button-out');
-const cardsRestaurants = document.querySelector('.rest-cards');
-const containerPromo = document.querySelector('.promo');
+const cardsRestaurants = document.querySelector('.cards-restaurants');
+const containerPromo = document.querySelector('.container-promo');
 const restaurants = document.querySelector('.restaurants');
-const menu = document.querySelector('.menu-cards');
+const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
-const menuCards = document.querySelector('.menu-cards');
+const menuCards = document.querySelector('.cards-menu');
 const inputSearch = document.querySelector('.rest-input');
 
 
@@ -39,8 +39,8 @@ function toggleModel() {
 }
 
 function toggleModelAuth() {
-    modelAuth.classList.toggle("is-open-auth");
-    if (modelAuth.classList.contains("is-open-auth")) {
+    modelAuth.classList.toggle("is-open");
+    if (modelAuth.classList.contains("is-open")) {
         enableScroll();
     } else {
         disableScroll();
@@ -99,7 +99,7 @@ function notAuthorized() {
     logInForm.addEventListener('submit', logIn);
 
     modelAuth.addEventListener('click', function (event) {
-        if (event.target.classList.contains("model-auth")) {
+        if (event.target.classList.contains("is-open")) {
             toggleModelAuth();
         }
     })
@@ -186,7 +186,7 @@ function openGoods(event) {
             containerPromo.classList.add('hide');
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
-            
+
             getData(`./db/${restaurant.products}`).then(function (data) {
                 data.forEach(createCardGood);
             });
