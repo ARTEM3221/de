@@ -1,25 +1,22 @@
 'use strict';
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
-
-
-
 const cartButton = document.querySelector("#cart-button");
-const model = document.querySelector(".modal");
+const modal = document.querySelector(".modal");
 const close = document.querySelector(".close");
 const buttonAuth = document.querySelector('.button-auth');
-const modelAuth = document.querySelector('.modal-auth');
+const modalAuth = document.querySelector('.modal-auth');
 const closeAuth = document.querySelector('.close-auth');
-const logInForm = document.querySelector('#loginform');
+const logInForm = document.querySelector('#logInform');
 const loginInput = document.querySelector('#login');
-const userName = document.querySelector('.username');
+const userName = document.querySelector('.user-name');
 const buttonOut = document.querySelector('.button-out');
 const cardsRestaurants = document.querySelector('.cards-restaurants');
 const containerPromo = document.querySelector('.container-promo');
 const restaurants = document.querySelector('.restaurants');
 const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
-const menuCards = document.querySelector('.cards-menu');
+const cardsMenu = document.querySelector('.cards-menu');
 const inputSearch = document.querySelector('.rest-input');
 
 
@@ -28,19 +25,19 @@ let login = localStorage.getItem('gloDelivery');
 const getData = async function (url) {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`Adres ${url},
+        throw new Error(`Adress ${url},
         statys ${response}`);
     }
     return await response.json();
 };
 
-function toggleModel() {
-    model.classList.toggle("is-open");
+function toggleModal() {
+    modal.classList.toggle("is-open");
 }
 
-function toggleModelAuth() {
-    modelAuth.classList.toggle("is-open");
-    if (modelAuth.classList.contains("is-open")) {
+function toggleModalAuth() {
+    modalAuth.classList.toggle("is-open");
+    if (modalAuth.classList.contains("is-open")) {
         enableScroll();
     } else {
         disableScroll();
@@ -65,6 +62,7 @@ function authorized() {
         buttonOut.removeEventListener('click', logOut);
         checkAuth();
     }
+
     console.log('Авторизований');
     userName.textContent = login;
     buttonAuth.style.display = 'none';
@@ -83,9 +81,9 @@ function notAuthorized() {
         if (loginInput.value.trim()) {
             login = loginInput.value;
             localStorage.setItem('gloDelivery', login);
-            toggleModelAuth();
-            buttonAuth.removeEventListener('click', toggleModelAuth);
-            closeAuth.removeEventListener('click', toggleModelAuth);
+            toggleModalAuth();
+            buttonAuth.removeEventListener('click', toggleModalAuth);
+            closeAuth.removeEventListener('click', toggleModalAuth);
             logInForm.removeEventListener('submit', logIn);
             logInForm.reset();
             checkAuth();
@@ -94,13 +92,13 @@ function notAuthorized() {
             loginInput.value = '';
         }
     }
-    buttonAuth.addEventListener('click', toggleModelAuth);
-    closeAuth.addEventListener('click', toggleModelAuth);
+    buttonAuth.addEventListener('click', toggleModalAuth);
+    closeAuth.addEventListener('click', toggleModalAuth);
     logInForm.addEventListener('submit', logIn);
 
-    modelAuth.addEventListener('click', function (event) {
+    modalAuth.addEventListener('click', function (event) {
         if (event.target.classList.contains("is-open")) {
-            toggleModelAuth();
+            toggleModalAuth();
         }
     })
 }
@@ -131,20 +129,23 @@ function createCardRestaurant(restaurant) {
 
 
     const card =
-        `<div class="card" data-products="${products}">
-    <a><img src="${image}" alt="" class="card-image"></a>
-    <div class="card-text">
-        <div class="card-head">
-            <h3 class="card-title">${name}</h3>
-            <span class="card-tag">${time_of_delivery}</span>
-        </div>
-        <div class="card-info">
-            <div class="raiting">&#9733; ${stars}</div>
-            <div class="price">${price}</div>
-            <div class="category">${kitchen}</div>
-        </div>
-    </div>
-</div>
+        `
+<a class="card card-restaurant  data-products="${products}">
+                        <img src="${image}" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title">${name}</h3>
+                                <span class="card-tag tag">${time_of_delivery}</span>
+                            </div>
+                            <div class="card-info">
+                                <div class="rating">
+                                &#9733; ${stars}
+                                </div>
+                                <div class="price">Від ${price} грн</div>
+                                <div class="category">${kitchen}</div>
+                            </div>
+                        </div>
+                    </a>
 `;
     cardsRestaurants.insertAdjacentHTML('beforeend', card);
 }
@@ -155,23 +156,26 @@ function createCardGood(goods) {
     const card = document.createElement('div');
     card.className = 'card';
     card.insertAdjacentHTML('beforeend', `
-    <div class="anim animate__animated animate__pulse">
-                    <img src="${image}" alt="" class="card-image">
-                    <div class="card-text card-text-menu">
-                        <div class=" card-head card-head-menu">
-                            <h3 class="card-title card-title-menu">${name}</h3>
-                            <span class="card-info card-info-menu">${description}</span>
-                        </div>
-                        <div class="card-buy">
-                            <button class="button button-menu">
-                                <img src="images/basket-button.svg" class="button-icon button-icon-menu"
-                                    alt="basket-button">
-                                <span class="button-text button-text-menu">В кошик</span>
-                            </button>
-                            <div class="price price-menu">${price}</div>
+                <div class="card">
+                        <img src="${image}" alt="image" class="card-image" />
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg">${name}</h3>
+                            </div>
+
+                            <div class="card-info">
+                                <div class="ingredients">${description}</div>
+                            </div>
+
+                            <div class="card-buttons">
+                                <button class="button button-primary button-add-cart">
+                                    <span class="button-card-text">В кошик</span>
+                                    <span class="button-cart-svg"></span>
+                                </button>
+                                <strong class="card-price-bold">${price}</strong>
+                            </div>
                         </div>
                     </div>
-                </div>
     `);
     menuCards.insertAdjacentElement('beforeend', card);
 }
@@ -180,7 +184,7 @@ function openGoods(event) {
     const target = event.target;
 
     if (login) {
-        const restaurant = target.closest('.rest-cards');
+        const restaurant = target.closest('.card-restaurant');
         if (restaurant) {
 
             containerPromo.classList.add('hide');
@@ -194,7 +198,7 @@ function openGoods(event) {
 
         }
     } else {
-        toggleModelAuth();
+        toggleModalAuth();
     }
 }
 
@@ -210,9 +214,9 @@ function init() {
         data.forEach(createCardRestaurant)
     });
 
-    cartButton.addEventListener("click", toggleModel);
+    cartButton.addEventListener("click", toggleModal);
 
-    close.addEventListener("click", toggleModel);
+    close.addEventListener("click", toggleModal);
 
     cardsRestaurants.addEventListener('click', openGoods);
 
